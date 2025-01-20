@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    display: flex; /* Enables flexbox layout for the parent div */
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0;
+    padding: 0;
+}
+
+#piecesDiv {
+    display: flex; /* Enables flexbox layout */
+    flex-wrap: wrap; /* Allows items to wrap to the next line if they exceed the container's width */
+    width: 100%; /* Full width of its parent */
+    height: auto; /* Adjusts height based on content */
+    gap: 10px; /* Optional: adds spacing between flex items */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in width/height */
+}
+
+.gridDiv{
+    display: grid;
+    gap: 2px;
+    margin: 20px;
+}
+
+#gameGridDiv {
+    grid-template-columns: repeat(8, 5.5vw);
+    grid-template-rows: repeat(8, 5.5vw);
+
+    width: 50%;
+}
+
+#selectionGridDiv {
+    grid-template-columns: repeat(8, 2.5vw);
+    grid-template-rows: repeat(8, 2.5vw);
+
+    width: 50%;
+}
+
+.pieceGridDiv {
+    grid-template-columns: repeat(8, 1.5vw);
+    grid-template-rows: repeat(8, 1.5vw);
+
+    cursor: pointer;
+}
+
+.pieceGridDiv .cell {
+    background-color: #00000000;
+    border: none;
+}
+
+.pieceGridDiv .cell.on {
+    background-color: #ff0000;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+
+
+    background-color: #ccc;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+
+.cell.on {
+    background-color: #4caf50;
+}
+
+.cell.highlighted {
+    background-color: #ff3bde;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

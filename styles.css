@@ -78,7 +78,7 @@ body {
 }
 
 .cell.highlighted {
-    background-color: #ff3bde;
+    background-color: #dad354;
 }
 
 .button {
@@ -92,4 +92,13 @@ body {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+#errorDiv{
+    background-color: #ffcccc;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: fit-content;
 }

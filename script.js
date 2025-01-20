@@ -217,6 +217,11 @@ let currentMove = null;
 let pieces = [];
 
 function placeSelectedPiece() {
+
+    if(!currentMove) {
+        return;
+    }
+
     let cells = gameGridDiv.getElementsByClassName('cell');
     for (let i = 0; i < cells.length; i++) {
         cells[i].classList.remove('highlighted');
@@ -250,7 +255,19 @@ function placeSelectedPiece() {
 }
 
 function loadBestSequence() {
+
+    if(pieces.length == 0) {
+        return;
+    }
+
     let bestMove = getBestMoveFromPieces(game, pieces, game.combo);
+
+    if(bestMove == null) {
+        document.getElementById('errorDiv').style.display = 'block';
+        return;
+    }else{
+        document.getElementById('errorDiv').style.display = 'none';
+    }
 
     //highlight the first move
     for (let i = 0; i < bestMove.piece.length; i++) {
@@ -411,6 +428,10 @@ document.getElementById('addPieceButton').addEventListener('click', () => {
             minX = Math.min(minX, x);
             minY = Math.min(minY, y);
         }
+    }
+
+    if(piece.length == 0) {
+        return;
     }
 
     //normalize the piece
